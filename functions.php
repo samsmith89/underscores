@@ -104,7 +104,29 @@ add_action( 'widgets_init', 'humescores_widgets_init' );
 function humescores_scripts() {
         //enqueue google fonts: Source Sans Pro and PT Serif
         wp_enqueue_style( 'humescores-fonts', 'https://fonts.googleapis.com/css?family=PT+Serif:400,400i,700,700i|Source+Sans+Pro:400,400i,600,900' );
-    
+        
+        /**
+         * Add preconnect for Google Fonts.
+         *
+         * @since Twenty Seventeen 1.0
+         *
+         * @param array  $urls           URLs to print for resource hints.
+         * @param string $relation_type  The relation type the URLs are printed.
+         * @return array $urls           URLs to print for resource hints.
+         */
+        function humescores_resource_hints( $urls, $relation_type ) {
+                if ( wp_style_is( 'humescores-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
+                        $urls[] = array(
+                                'href' => 'https://fonts.gstatic.com',
+                                'crossorigin',
+                        );
+                }
+
+                return $urls;
+        }
+        add_filter( 'wp_resource_hints', 'humescores_resource_hints', 10, 2 );
+
+
 	wp_enqueue_style( 'humescores-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'humescores-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );

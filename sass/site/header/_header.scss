@@ -28,7 +28,7 @@
     margin-right: 1em;
     img {
         display: block;
-        height: 65;
+        height: 65px;
         width: auto;
     }
 }
@@ -73,6 +73,7 @@
     
     .site-branding {
         width: 35%;
+        flex: 1 0 auto;
     }
     
     .site-navigation {

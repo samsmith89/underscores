@@ -446,40 +446,23 @@ input[type="submit"] {
 	border-color: black;
 	background: transparent;
 	color: black;
+	font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
 	font-size: 20px;
 	font-size: 1.25rem;
 	line-height: 1;
 	padding: .5em 1em;
 }
 
-button:hover button:active, button:focus,
-input[type="button"]:hover button:active,
+button:hover, button:active, button:focus,
+input[type="button"]:hover,
+input[type="button"]:active,
 input[type="button"]:focus,
-input[type="reset"]:hover button:active,
+input[type="reset"]:hover,
+input[type="reset"]:active,
 input[type="reset"]:focus,
-input[type="submit"]:hover button:active,
-input[type="submit"]:focus, button:hover
-input[type="button"]:active,
-input[type="button"]:hover
-input[type="button"]:active,
-input[type="reset"]:hover
-input[type="button"]:active,
-input[type="submit"]:hover
-input[type="button"]:active, button:hover
-input[type="reset"]:active,
-input[type="button"]:hover
-input[type="reset"]:active,
-input[type="reset"]:hover
-input[type="reset"]:active,
-input[type="submit"]:hover
-input[type="reset"]:active, button:hover
+input[type="submit"]:hover,
 input[type="submit"]:active,
-input[type="button"]:hover
-input[type="submit"]:active,
-input[type="reset"]:hover
-input[type="submit"]:active,
-input[type="submit"]:hover
-input[type="submit"]:active {
+input[type="submit"]:focus {
 	background: white;
 	color: black;
 }
@@ -852,7 +835,7 @@ Header Menu
 }
 
 .main-navigation .menu-item-has-children,
-.main-navigation .page-item-has-children {
+.main-navigation .page_item_has_children {
 	min-width: 218px;
 }
 
@@ -884,7 +867,7 @@ button.dropdown-toggle {
 	border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Toggle small menu and sub-menus on */
+/* Toggle small menu and children on */
 .toggled-on ul,
 .sub-menu.toggled-on {
 	display: block;
@@ -933,6 +916,13 @@ button.dropdown-toggle {
 		    -ms-flex-pack: end;
 		        justify-content: flex-end;
 		padding-top: 0;
+		/* If you want dropdowns to open on hover, uncomment this: */
+		/*
+			li:hover > ul,
+				li:focus > ul {
+				display: block;
+			}
+			*/
 	}
 }
 
@@ -977,6 +967,47 @@ button.dropdown-toggle {
 
 .bypostauthor {
 	display: block;
+}
+
+/*--------------------------------------------------------------
+## Footer
+--------------------------------------------------------------*/
+.site-footer {
+	position: relative;
+	padding: 1em;
+	font-family: "Source Sans Pro", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Arial, sans-serif;
+	color: #fff;
+	background-color: #002254;
+	text-align: center;
+}
+
+@media screen and (min-width: 600px) {
+	.site-footer {
+		padding: 1em 2em;
+	}
+}
+
+.social-menu ul {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+.social-menu ul a {
+	display: block;
+	padding: .5em 1em;
+	color: white;
+	text-decoration: none;
+}
+
+.social-menu ul a:hover, .social-menu ul a:focus {
+	text-decoration: underline;
 }
 
 /*--------------------------------------------------------------

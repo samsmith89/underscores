@@ -715,6 +715,39 @@ a:hover, a:active {
 	border-bottom-color: white;
 }
 
+/*
+.pagination {
+
+	font-family: $font__sans;
+
+	.nav-links {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+	}
+
+	a,
+	span {
+		padding: .5em 1em;
+		background: white;
+	}
+
+	a {
+		text-decoration: none;
+
+		&:focus,
+		&:hover {
+			color: white;
+			background: $color__interactive;
+		}
+	}
+
+	.current {
+		font-weight: 600;
+		color: $color__interactive;
+	}
+}
+*/
 /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
@@ -897,6 +930,16 @@ a:hover, a:active {
 	.archive-view.has-sidebar .widget-area {
 		width: 30%;
 	}
+}
+
+.index-image img {
+	display: block;
+	margin: 0 auto;
+}
+
+.index-image a:focus > img,
+.index-image a:hover > img {
+	opacity: .8;
 }
 
 .continue-reading {
